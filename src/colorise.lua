@@ -10,6 +10,11 @@ c.hex2rgba = function (hex)
     return tonumber("0x"..hex:sub(1,2)), tonumber("0x"..hex:sub(3,4)), tonumber("0x"..hex:sub(5,6)), tonumber("0x"..hex:sub(7,8))
 end
 
+c.hex2argb = function (hex)
+    hex = hex:gsub("#","")
+    return tonumber("0x"..hex:sub(3,4)), tonumber("0x"..hex:sub(5,6)), tonumber("0x"..hex:sub(7,8)),tonumber("0x"..hex:sub(1,2))
+end
+
 c.rgb2hex = function (rgb)
 	local hexadecimal = '#'
 
